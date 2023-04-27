@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS cookout_db;
+CREATE DATABASE cookout_db;
