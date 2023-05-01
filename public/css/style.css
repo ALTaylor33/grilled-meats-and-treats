@@ -1,7 +1,22 @@
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
-}
+.body{
+  background-color:#cacacc;
+  background-size: cover;
+  
+  }
 
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+  .header {
+   align-items: center;
+    border: 5px double #1C6EA4;
+    background-color: rgb(136, 87, 97);
+  }
+  
+  .login {
+   float: right;
+  }
 .no-button {
   background: none;
   border: none;
@@ -22,3 +37,4 @@ header, .project:not(:last-child) {
   font-weight: bold;
   margin-left: -5px;
 }
+
