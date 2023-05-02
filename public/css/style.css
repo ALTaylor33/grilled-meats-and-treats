@@ -15,7 +15,9 @@
   }
   
   .login {
-   float: right;
+   position: fixed;
+   right: auto;
+
   }
 .no-button {
   background: none;
@@ -32,9 +34,5 @@
   text-decoration: underline;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
-}
+
 
