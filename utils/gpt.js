@@ -1,7 +1,7 @@
 const { Configuration, OpenAIApi } = require('openai');
 
 const config = new Configuration({
-    apiKey: "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"
+    apiKey: "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" // temp key attached to eric's account. DO NOT SHARE
 });
 
 const openai = new OpenAIApi(config);
@@ -17,9 +17,9 @@ const generateFood = async () => {
         temperature: 0.5, // randomness setting (can be set between 0 and 1)
     });
 
-    console.log(response.data.choices[0].text); 
+    // console.log(response.data.choices[0].text); 
     return response.data.choices[0].text
 }
 
 
-generateFood();
+// generateFood();
