@@ -1,14 +1,14 @@
 const { Configuration, OpenAIApi } = require('openai');
 
 const config = new Configuration({
-    apiKey: "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" // temp key attached to eric's account. DO NOT SHARE
+    apiKey: "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" // temp key attached to eric's account. DO NOT SHARE
 });
 
 const openai = new OpenAIApi(config);
 
 const generateFood = async () => {
 
-    const prompt = "Give one example of a shareable dish to bring to a cookout. Stop after one sentence." //Change this to change AI input (longer is more expensive)
+    const prompt = "Name a shareable dish to bring to a cookout. Stop after one sentence." //Change this to change AI input (longer is more expensive)
 
     const response = await openai.createCompletion({
         model: 'text-curie-001', // language model, look up options to change (current option is cheapest text model)
