@@ -2,7 +2,7 @@ const User = require('./User');
 const Event = require('./event');
 const Guest = require('./guest');
 
-User.hasMany(Project, {
+User.belongsTo(Event, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'
 });
@@ -16,7 +16,7 @@ User.belongsToMany(Event, {
   through:Guest
 });
 
-Event.hasMany(User, {
+Event.belongsToMany(User, {
   foreignKey: 'event_id',
   through:Guest
 })
