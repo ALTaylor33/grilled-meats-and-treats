@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const { Guest } = require('../../models');
+const { Guest, User } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
-    const guestData = await Guest.create(req.body);
+    const guestData = await User.create(req.body);
 
     req.session.save(() => {
       req.session.guest_id = guestData.id;
@@ -12,13 +12,14 @@ router.post('/', async (req, res) => {
       res.status(200).json(guestData);
     });
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
 
 router.post('/login', async (req, res) => {
   try {
-    const guestData = await Guest.findOne({ where: { email: req.body.email } });
+    const guestData = await User.findOne({ where: { email: req.body.email } });
 
     if (!guestData) {
       res
