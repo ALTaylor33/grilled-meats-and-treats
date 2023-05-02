@@ -1,7 +1,7 @@
 const { Configuration, OpenAIApi } = require('openai');
 
 const config = new Configuration({
-    apiKey: "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" // temp key attached to eric's account. DO NOT SHARE
+    apiKey: "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" // temp key attached to eric's account. DO NOT SHARE
 });
 
 const openai = new OpenAIApi(config);
