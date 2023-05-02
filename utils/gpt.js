@@ -1,23 +1,25 @@
-const openai = require('openai');
-const prompt = "Generate a random cookout food:";
-const apiKey = "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";
-const maxTokens = 15;
-const temperature = 0.6;
-const modelEngine = "text-davinci-002";
+const { Configuration, OpenAIApi } = require('openai');
 
-openai.api_key = apiKey;
+const config = new Configuration({
+    apiKey: "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"
+});
 
-function generateRandomFood() {
-  return openai.Completion.create({
-    engine: modelEngine,
-    prompt: prompt,
-    temperature: temperature,
-    max_tokens: maxTokens
-  }).then(response => {
-    const food = response.choices[0].text.trim();
-    return food;
-  })
-  console.log(food);
+const openai = new OpenAIApi(config);
+
+const generateFood = async () => {
+
+    const prompt = "Give one example of a shareable dish to bring to a cookout. Stop after one sentence."
+
+    const response = await openai.createCompletion({
+        model: 'text-curie-001', 
+        prompt: prompt, 
+        max_tokens: 32,
+        temperature: 0.5, 
+    });
+
+    console.log(response.data.choices[0].text); 
+    return response.data.choices[0].text
 }
 
 
+generateFood();
