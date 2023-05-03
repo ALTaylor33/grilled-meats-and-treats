@@ -1,5 +1,7 @@
 const { Configuration, OpenAIApi } = require('openai');
 
+require('dotenv').config({path:'../.env'})
+
 const config = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
@@ -17,9 +19,9 @@ const generateFood = async () => {
         temperature: 0.5, // randomness setting (can be set between 0 and 1)
     });
 
-    console.log(response.data.choices[0].text); 
+    // console.log(response.data.choices[0].text); 
     return response.data.choices[0].text
 }
 
 
-generateFood();
+// generateFood();
