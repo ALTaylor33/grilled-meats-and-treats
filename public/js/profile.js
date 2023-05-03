@@ -1,3 +1,5 @@
+const { doc } = require("prettier");
+
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -45,3 +47,10 @@ document
 document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
+
+  document.getElementById("addGuest").addEventListener("click", function() {
+    var guestList = document.getElementById("guestLabel");
+    var newGuest = document.createElement("li");
+    newGuest.textContent = "Guest " + (guestList.children.length + 1);
+    guestList.appendChild(newGuest);
+  });
