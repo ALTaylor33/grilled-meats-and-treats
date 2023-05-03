@@ -1,10 +1,11 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Event, Guest } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   console.log('inside homeroutes')
   try {
+
     // // Get all projects and JOIN with user data
     // const eventData = await Event.findAll({
     //   include: [
@@ -14,6 +15,7 @@ router.get('/', async (req, res) => {
     //     },
     //   ],
     // });
+   
 
     // Serialize data so the template can read it
     const events = eventData.map((event) => event.get({ plain: true }));
@@ -28,21 +30,21 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/event/:id', async (req, res) => {
   try {
-    const projectData = await Project.findByPk(req.params.id, {
+    const eventData = await Event.findByPk(req.params.id, {
       include: [
         {
-          model: User,
+          model: Guest,
           attributes: ['name'],
         },
       ],
     });
 
-    const project = projectData.get({ plain: true });
+    const event = eventData.get({ plain: true });
 
-    res.render('project', {
-      ...project,
+    res.render('event', {
+      ...event,
       logged_in: req.session.logged_in
     });
   } catch (err) {

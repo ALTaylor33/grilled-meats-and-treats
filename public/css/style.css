@@ -1,7 +1,24 @@
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
-}
+.body{
+  background-color:#cacacc;
+  background-size: cover;
+  
+  }
 
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+  .header {
+   align-items: center;
+    border: 5px double #1C6EA4;
+    background-color: rgb(136, 87, 97);
+  }
+  
+  .login {
+   position: fixed;
+   right: auto;
+
+  }
 .no-button {
   background: none;
   border: none;
@@ -17,8 +34,5 @@ header, .project:not(:last-child) {
   text-decoration: underline;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
-}
+
+
