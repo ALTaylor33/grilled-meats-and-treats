@@ -1,13 +1,13 @@
 const { Drink } = require('../models');
 
-const Drink = require("../models/drink")
-
 const drinkData = [
     {
-        drink_id: 1,
-        drink_name: "Whiskey"
-    }
+        drink_id: 3,
+        drink_name: "Whiskey",
+        event_id: 1,
+    },
+    
 ]
-const seedDrinks = () => Drink.bulkCreate(drinkData)
+const seedDrinks = async () => Drink.bulkCreate(drinkData)
 
 module.exports = seedDrinks;

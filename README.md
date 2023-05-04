@@ -1,4 +1,4 @@
-## grilled-meats-and-treats
+# grilled-meats-and-treats
 
 ## Description
 
