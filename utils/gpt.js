@@ -19,9 +19,9 @@ const generateFood = async () => {
         temperature: 0.5, // randomness setting (can be set between 0 and 1)
     });
 
-    // console.log(response.data.choices[0].text); // uncomment this (1/2) to test
+    console.log(response.data.choices[0].text); // uncomment this (1/2) to test
     return response.data.choices[0].text
 }
 
 
-// generateFood(); // uncomment this (2/2) to test
+generateFood(); // uncomment this (2/2) to test
