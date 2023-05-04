@@ -1,9 +1,11 @@
 const User = require('./User');
+const Drink = require('./drink');
 const Event = require('./event');
+const Food = require('./food');
 const Guest = require('./guest');
 
 User.belongsTo(Event, {
-  foreignKey: 'user_id',
+  foreignKey: 'host_id',
   onDelete: 'CASCADE'
 });
 
@@ -20,5 +22,33 @@ Event.belongsToMany(User, {
   foreignKey: 'event_id',
   through:Guest
 })
+Food.belongsTo(User, {
+  foreignKey: 'food_id',
+  
+})
+Food.belongsTo(Event, {
+  foreignKey: 'event_id',
+  
+})
+Drink.belongsTo(User, {
+  foreignKey: 'drink_id',
+  
+})
+Drink.belongsTo(Event, {
+  foreignKey: 'event_id',
+  
+})
+User.hasMany(Drink, {
+  foreignKey: 'drink_id'
+})
+User.hasMany(Food, {
+  foreignKey: 'food_id'
+})
+Event.hasMany(Drink, {
+  foreignKey: 'event_id'
+})
+Event.hasMany(Food, {
+  foreignKey: 'event_id'
+})
 
-module.exports = { User, Event };
+module.exports = { User, Event, Guest, Food, Drink };

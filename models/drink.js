@@ -15,7 +15,16 @@ Drink.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: ["user", "event"],
+                model: "user",
+                key: "id",
+            }
+        },
+       event_id:
+        {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: "event",
                 key: "id",
             }
         },
