@@ -2,21 +2,19 @@
   <div class="col-md-6">
     <h2>Login</h2>
 
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">Email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">Login</button>
-      </div>
-    </form>
+  <form class="form login-form" action="/api/guest/login" method="POST">
+  <div class="form-group">
+    <label for="email-login">Email:</label>
+    <input class="form-input" type="text" id="email-login" name="email" />
   </div>
-  <div class="col-md-6">
+  <div class="form-group">
+    <label for="password-login">Password:</label>
+    <input class="form-input" type="password" id="password-login" name="password" />
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary" type="submit">Login</button>
+  </div>
+</form>
     <h2>Signup</h2>
 
     <form class="form signup-form">

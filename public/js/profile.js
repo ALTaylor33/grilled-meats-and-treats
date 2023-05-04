@@ -48,9 +48,15 @@ document
   .querySelector('.project-list')
   .addEventListener('click', delButtonHandler);
 
-  document.getElementById("addGuest").addEventListener("click", function() {
-    var guestList = document.getElementById("guestLabel");
-    var newGuest = document.createElement("li");
-    newGuest.textContent = "Guest" + (guestList.children.length + 1);
-    guestList.appendChild(newGuest);
-  });
+  (function addMoreGuests() {
+    var guestList = document.getElementById("guestList");
+    var addGuestButton = document.getElementById("addGuest");
+    var guestCount = 0;
+  
+    addGuestButton.addEventListener("click", function() {
+      guestCount++;
+      var newGuest = document.createElement("li");
+      newGuest.textContent = "Guest " + guestCount;
+      guestList.appendChild(newGuest);
+    });
+  })();
