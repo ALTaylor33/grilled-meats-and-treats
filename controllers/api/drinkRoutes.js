@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Drink } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newDrink = await Drink.create({
       ...req.body,
@@ -14,6 +14,16 @@ router.post('/', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+router.get('/', (req,res) => {
+    Drink.findAll()
+    .then(data => {
+        res.json(data)
+    }).catch(err => {
+        console.log (err)
+        res.status(500).json(err)
+    })
+})
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {

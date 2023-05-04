@@ -1,15 +1,15 @@
 const router = require('express').Router();
-const { Event } = require('../../models');
+const { Food } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newEvent = await Event.create({
+    const newFood = await Food.create({
       ...req.body,
-      guest_id: req.session.guest_id,
+      food_id: req.session.guest_id,
     });
 
-    res.status(200).json(newEvent);
+    res.status(200).json(newFood);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -17,19 +17,19 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const eventData = await Event.destroy({
+    const foodData = await Food.destroy({
       where: {
         id: req.params.id,
-        guest_id: req.session.guest_id,
+        food_id: req.session.guest_id,
       },
     });
 
-    if (!eventData) {
-      res.status(404).json({ message: 'No event found with this id!' });
+    if (!foodData) {
+      res.status(404).json({ message: 'No food found with this id!' });
       return;
     }
 
-    res.status(200).json(eventData);
+    res.status(200).json(foodData);
   } catch (err) {
     res.status(500).json(err);
   }
