@@ -1,13 +1,18 @@
-const { Drink } = require('../models');
+const { Food } = require('../models');
 
-const Food = require("../models/food")
 
 const foodData = [
     {
         food_id: 1,
-        food_name: "Burgers"
-    }
+        food_name: "Burgers",
+        event_id: 1
+    },
+    {
+        food_id: 2,
+        food_name: "Hot Dogs",
+        event_id: 1
+    },
 ]
-const seedFood = () => Food.bulkCreate(foodData)
+const seedFood = async () => Food.bulkCreate(foodData)
 
 module.exports = seedFood;
