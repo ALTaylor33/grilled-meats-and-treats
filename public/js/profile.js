@@ -56,7 +56,7 @@ document
     addGuestButton.addEventListener("click", function() {
       guestCount++;
       var newGuest = document.createElement("li");
-      newGuest.textContent = "Guest " + guestCount;
+      newGuest.textContent = "Guest" + guestCount;
       guestList.appendChild(newGuest);
     });
   })();
