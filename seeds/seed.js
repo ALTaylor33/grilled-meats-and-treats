@@ -6,16 +6,16 @@ const seedDrinks = require("./drink-seeds")
 const seedEvent = require("./event-seeds")
 
 
-const userData = require('./userData.json');
-const projectData = require('./projectData.json');
+// const userData = require('./userData.json');
+// const projectData = require('./projectData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const users = await User.bulkCreate(userData, {
-    individualHooks: true,
-    returning: true,
-  });
+  // const users = await User.bulkCreate(userData, {
+  //   individualHooks: true,
+  //   returning: true,
+  // });
   const events = await seedEvent()
   const guests = await seedGuest()
   const food= await seedFood()

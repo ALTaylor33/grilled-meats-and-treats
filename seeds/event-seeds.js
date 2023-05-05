@@ -5,6 +5,7 @@ const eventData = [
         host_id: 1,
         event_name: "Whiskey",
         event_date: Date.now(),
+        description: "party"
     },
 
     

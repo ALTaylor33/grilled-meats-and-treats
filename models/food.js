@@ -11,21 +11,21 @@ Food.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        food_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: "user",
-                key: "id",
-            }
-        },
+        // food_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     references: {
+        //         model: "user",
+        //         key: "id",
+        //     }
+        // },
         event_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: "event",
-                key: "id",
-            }
+            allowNull: true,
+            // references: {
+            //     model: "event",
+            //     key: "id",
+            // }
         },
         
         food_name: {
