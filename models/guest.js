@@ -11,13 +11,16 @@ Guest.init (
             primaryKey: true,
             autoIncrement: true,
         },
-        guest_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: "user",
-                key: "id",
-            }
-        },
+        // guest_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: "user",
+        //         key: "id",
+        //     }
+        // },
+        guestName: {
+            type: DataTypes.STRING,
+        }, 
         event_id: {
             type: DataTypes.INTEGER,
             references: {
