@@ -31,6 +31,7 @@ const newFormHandler = async (event) => {
     console.log(response2)
 
     if (response2.ok) {
+      window.location.reload()
     } else {
       alert('Failed to create event');
     }

@@ -24,6 +24,16 @@ router.get('/', (req,res) => {
       console.log (err)
       res.status(500).json(err)
   })
+});
+
+router.get('/:id', (req,res) => {
+  Event.findAll()
+  .then(data => {
+      res.json(data)
+  }).catch(err => {
+      console.log (err)
+      res.status(500).json(err)
+  })
 })
 
 router.delete('/:id', withAuth, async (req, res) => {
@@ -45,5 +55,6 @@ router.delete('/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 
 module.exports = router;
