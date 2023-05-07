@@ -62,15 +62,35 @@ document
 //   .querySelector('.project-list')
 //   .addEventListener('click', delButtonHandler);
 
-  (function addMoreGuests() {
-    var guestList = document.getElementById("guestList");
-    var addGuestButton = document.getElementById("addGuest");
-    var guestCount = 0;
+(function addMoreGuests() {
+  var guestList = document.getElementById("guestLabel");
+  var addGuestButton = document.getElementById("addGuest");
+  var guestCount = 1;
   
-    addGuestButton.addEventListener("click", function() {
-      guestCount++;
-      var newGuest = document.createElement("li");
-      newGuest.textContent = "Guest" + guestCount;
-      guestList.appendChild(newGuest);
+  addGuestButton.addEventListener("click", function() {
+    guestCount++;
+    var newGuestGroup = document.createElement("div");
+    newGuestGroup.className = "form-group";
+    
+    var newGuestLabel = document.createElement("label");
+    newGuestLabel.textContent = "Guest " + guestCount + ":";
+    newGuestLabel.setAttribute("for", "guest" + guestCount);
+    
+    var newGuestInput = document.createElement("textarea");
+    newGuestInput.className = "form-input";
+    newGuestInput.setAttribute("id", "guest" + guestCount);
+    newGuestInput.setAttribute("name", "guest" + guestCount);
+
+    var deleteButton = document.createElement("button");
+    deleteButton.className = "btn btn-danger";
+    deleteButton.textContent = "Delete";
+    deleteButton.addEventListener("click", function() {
+      guestList.removeChild(newGuestGroup);
     });
-  })();
+    
+    newGuestGroup.appendChild(newGuestLabel);
+    newGuestGroup.appendChild(newGuestInput);
+    newGuestGroup.appendChild(deleteButton);
+    guestList.appendChild(newGuestGroup);
+  });
+})();
