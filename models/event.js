@@ -14,17 +14,21 @@ Event.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        description: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         event_date: {
             type: DataTypes.DATE,
             allowNull: false,
         },
-        host_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: "user",
-                key: "id"
-            }
-        }
+        // host_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: "user",
+        //         key: "id"
+        //     }
+        // }
     },
     {
         sequelize,

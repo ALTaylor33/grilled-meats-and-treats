@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
   //   //   ],
   //   // });
    
-res.render('party')
+res.redirect('login')
   //   // Serialize data so the template can read it
   //   const events = eventData.map((event) => event.get({ plain: true }));
 
@@ -53,23 +53,23 @@ router.get('/event/:id', async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/profile', withAuth, async (req, res) => {
-  // try {
-  //   // Find the logged in user based on the session ID
-  //   const guestData = await Guest.findByPk(req.session.guest_id, {
-  //     attributes: { exclude: ['password'] },
-  //     include: [{ model: Event }],
-  //   });
+router.get('/profile', async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const eventData = await Event.findAll( {
+  
+    });
 
-  //   const guest = guestData.get({ plain: true });
-res.render('profile')
-  //   res.render('profile', {
-  //     ...guest,
-  //     logged_in: true
-  //   });
-  // } catch (err) {
-  //   res.status(500).json(err);
-  // }
+    const events = eventData.map((event) => event.get({ plain: true }));
+    console.log(events)
+    res.render('profile', {
+      events,
+      logged_in: true
+    });
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err);
+  }
 });
 
 router.get('/login', (req, res) => {

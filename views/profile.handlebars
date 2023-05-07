@@ -1,17 +1,11 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome,</h2>
-  </div>
-</div>
-
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>My Party to plan</h3>
+    <h3>My Party to Plan</h3>
 
-    <form class="form new-project-form">
+    <form class="form new-event-form">
       <div class="form-group">
-        <label for="project-name">Party Address:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+        <label for="party-add">Party Address:</label>
+        <input class="form-input" type="text" id="party-add" name="party-add" />
       </div>
       <div class="form-group">
         <label for="date">Date:</label>
@@ -19,10 +13,10 @@
       </div>
       <div class="form-group">
         <label for="party-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <textarea class="form-input" id="party-desc" name="party-desc"></textarea>
       </div>
       <div id="guestLabel" class="form-group">
-        <label for="project-desc">guest:</label>
+        <label for="guestLabel">guest:</label>
         <textarea class="form-input" id="guest" name="guest"></textarea>
       </div>
        <div class="form-group">
@@ -34,22 +28,27 @@
     </form>
   </div>
 
-  {{!-- {{#if projects.length}}
+  {{!-- {{#if projects.length}} --}}
   <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
-
-    {{#each projects as |project|}}
+    <h3>Current Party:</h3>
+    {{#each events}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        {{!-- <h2>{{event_name}}</h2> --}}
+        {{#if @last}} 
+        <h4>{{event_name}}</h4>
+        <h5>Description: {{description}}</h5>
+        <p>Date: {{event_date}}</p>
+        {{/if}}
+        {{!-- <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4> --}}
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        {{!-- <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button> --}}
       </div>
     </div>
     {{/each}}
   </div>
-  {{/if}} --}}
+  {{!-- {{/if}} --}}
 </div>
 
 <script src="./js/profile.js"></script>
