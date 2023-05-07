@@ -17,6 +17,34 @@ router.post('/', async (req, res) => {
   }
 });
 
+
+app.post('/party/:id/guests/:guestId', (req, res) => {
+  const { guestFoodDesc, guestDrinkDesc } = req.body;
+  const { id, guestId } = req.params;
+
+  Guest.update(
+    {
+      food: guestFoodDesc,
+      drink: guestDrinkDesc,
+    },
+    {
+      where: {
+        id: guestId,
+        partyId: id,
+      },
+    }
+  )
+    .then((updatedGuest) => {
+      res.status(200).json(updatedGuest);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).json({ error: 'Failed to update guest.' });
+    });
+});
+
+
+
 // router.post('/login', async (req, res) => {
 //   try {
 //     const guestData = await User.findOne({ where: { email: req.body.email } });

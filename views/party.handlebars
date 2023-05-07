@@ -1,11 +1,28 @@
 <div class="row mb-4 project">
   <div class="col-md-5">
- <h1>show party name/date</h1>
- <p>{{#each guest as |guest| }}
-  <il>
-    show guest name and what they are bringing
-  </il>
- </p>  
+    <h1>{{party.name}} - {{party.date}}</h1>
+    <p>{{party.address}}</p>
+    <ul>
+      {{#each guests}}
+        <li>{{this.name}}
+          <form id="guestFoodForm{{@index}}">
+            <div id="guestFood" class="form-group">
+              <label for="guestFood">Guest Food:</label>
+              <textarea class="form-input" id="guestFoodDesc{{@index}}" name="guestFoodDesc"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          
+          <form id="guestDrinkForm{{@index}}">
+            <div id="guestDrink" class="form-group">
+              <label for="guestDrink">Guest Drink:</label>
+              <textarea class="form-input" id="guestDrinkDesc{{@index}}" name="guestDrinkDesc"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          
+        </li>
+      {{/each}}
+    </ul>
   </div>
-  {{/each}}
- </div>
+</div>
