@@ -2,15 +2,15 @@
   background-color:#cacacc;
   background-size: cover;
   
-  }
+}
 
-  .header {
-   align-items: center;
-    border: 5px double #1C6EA4;
-    background-color: rgb(136, 87, 97);
-    display:flex;
-    justify-content: center;
-  }
+.header {
+  align-items: center;
+  border: 5px double #1C6EA4;
+  background-color: rgb(136, 87, 97);
+  display:flex;
+  justify-content: center;
+}
   
 #headerTxt{
     position: absolute;
@@ -26,11 +26,10 @@
   width: 100px;
 }
 
-  .login {
-   position: fixed;
-   right: 5%;
-
-  }
+.login {
+  position: fixed;
+  right: 5%;
+}
 .no-button {
   background: none;
   border: none;
