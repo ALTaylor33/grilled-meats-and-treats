@@ -1,7 +1,6 @@
 .body{
   background-color:#cacacc;
   background-size: cover;
-  
   }
 
   .header {
@@ -26,11 +25,18 @@
   width: 100px;
 }
 
-  .login {
+.login {
    position: fixed;
    right: 5%;
 
   }
+
+.welcomeTxt{
+  text-align: center;
+  justify-content: center;
+  display: flex;
+}
+
 .no-button {
   background: none;
   border: none;
