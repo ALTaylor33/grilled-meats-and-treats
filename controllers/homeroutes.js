@@ -61,9 +61,9 @@ router.get('/profile', async (req, res) => {
     });
 
     const events = eventData.map((event) => event.get({ plain: true }));
-
+    console.log(events)
     res.render('profile', {
-      ...events,
+      events,
       logged_in: true
     });
   } catch (err) {

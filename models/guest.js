@@ -27,7 +27,9 @@ Guest.init (
                 model: "event",
                 key: "id",
             }
-        }
+        },
+        //drink_id
+        //food_id
     },
     {
         sequelize,
