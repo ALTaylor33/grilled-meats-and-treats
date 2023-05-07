@@ -1,15 +1,18 @@
 .body{
   background-color:#cacacc;
   background-size: cover;
-  }
 
-  .header {
-   align-items: center;
-    border: 5px double #1C6EA4;
-    background-color: rgb(136, 87, 97);
-    display:flex;
-    justify-content: center;
-  }
+  
+}
+
+.header {
+  align-items: center;
+  border: 5px double #1C6EA4;
+  background-color: rgb(136, 87, 97);
+  display:flex;
+  justify-content: center;
+}
+
   
 #headerTxt{
     position: absolute;
@@ -27,14 +30,10 @@
 
 .login {
    position: fixed;
-   right: 5%;0
+   right: 5%;
 
-  }
-
-.welcomeTxt{
-  text-align: center;
-  justify-content: center;
-  display: flex;
+  position: fixed;
+  right: 5%;
 }
 
 .no-button {
