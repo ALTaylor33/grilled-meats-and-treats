@@ -1,14 +1,13 @@
-const signupFormHandler = async (event) => {
+const foodHandler = async (event) => {
     event.preventDefault();
   
-    const name = document.querySelector('#name-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
-  
-    if (name && email && password) {
+    const food = document.querySelector('#food').value.trim();
+    const guest = document.querySelector('#guest').value.trim();
+
+    if (food && guest ) {
       const response = await fetch('/api/food', {
         method: 'POST',
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ food, guest }),
         headers: { 'Content-Type': 'application/json' },
       });
   

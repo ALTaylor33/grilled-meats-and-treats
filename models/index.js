@@ -18,6 +18,10 @@ Drink.belongsTo(Guest, {
   foreignKey: "guest_id"
 })
 
+Event.hasMany(Guest, {
+  foreignKey: "event_id"
+})
+
 
 
 
