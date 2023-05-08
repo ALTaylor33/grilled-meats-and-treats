@@ -1,7 +1,10 @@
 <div class="row mb-4 project">
   <div class="col-md-5">
-    <h1>{{party.name}} - {{party.date}}</h1>
-    <p>{{party.address}}</p>
+     {{#each parties}}
+    <h1>{{event_name}} - {{event_date}}</h1>
+    <p>{{address}}</p>
+    <button onclick="partyDetails({{id}})">Event Details</button>
+    {{/each}}
     <ul>
       {{#each guests}}
         <li>{{this.name}}
@@ -26,3 +29,9 @@
     </ul>
   </div>
 </div>
+
+<script>  
+const partyDetails = (id) => {
+    location.replace(`/party/${id}`)
+}
+</script>
