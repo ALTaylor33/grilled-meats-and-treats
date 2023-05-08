@@ -28,8 +28,12 @@ Guest.init (
                 key: "id",
             }
         },
-        //drink_id
-        //food_id
+        guestDrink: {
+            type: DataTypes.STRING,
+        },
+        guestFood: {
+            type: DataTypes.STRING,
+        }
     },
     {
         sequelize,
