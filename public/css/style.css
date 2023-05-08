@@ -7,19 +7,18 @@
 
 .header {
   align-items: center;
-  border: 5px double #1C6EA4;
-  background-color: rgb(136, 87, 97);
+  border: 5px double #a41c1c;
+  background-color: rgb(72, 71, 71);
   display:flex;
   justify-content: center;
 }
-
-  
+ 
 #headerTxt{
     position: absolute;
     top: 35 px;
     left: 51.5%;
     z-index: 1;
-  color: rgb(187, 54, 54);
+  color: orangered;
 
 }
 
@@ -29,11 +28,9 @@
 }
 
 .login {
-   position: fixed;
+  
+   position: absolute;
    right: 5%;
-
-  position: fixed;
-  right: 5%;
 }
 
 .no-button {
