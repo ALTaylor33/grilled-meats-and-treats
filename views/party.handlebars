@@ -1,10 +1,12 @@
 <div class="row mb-4 project">
   <div class="col-md-5">
+
      {{#each parties}}
     <h1>{{event_name}} - {{event_date}}</h1>
     <p>{{address}}</p>
     <button onclick="partyDetails({{id}})">Event Details</button>
     {{/each}}
+
     <ul>
       {{#each guests}}
         <li>{{this.name}}
