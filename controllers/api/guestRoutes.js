@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { Guest, User } = require('../../models');
+const express = require('express');
+const app = express();
 
 router.post('/', async (req, res) => {
   try {
@@ -18,7 +20,7 @@ router.post('/', async (req, res) => {
 });
 
 
-app.post('/party/:id/guests/:guestId', (req, res) => {
+app.post('/party/:id/guests/:guestId', async (req, res) => {
   const { guestFoodDesc, guestDrinkDesc } = req.body;
   const { id, guestId } = req.params;
 
