@@ -36,11 +36,13 @@ router.get('/party/:id', async (req, res) => {
       include: [
         {
           model: Guest,
+          attributes:["guestName", "guestDrink", "guestFood"]
         },
       ],
     });
 
     const party = eventData.get({ plain: true });
+    console.log(party)
 
     res.render('single-party', {
       party,
