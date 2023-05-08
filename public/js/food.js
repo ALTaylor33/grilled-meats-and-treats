@@ -3,9 +3,7 @@ const foodHandler = async (event) => {
   
     const food = document.querySelector('#food').value.trim();
     const guest = document.querySelector('#guest').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
-  
+
     if (food && guest ) {
       const response = await fetch('/api/food', {
         method: 'POST',

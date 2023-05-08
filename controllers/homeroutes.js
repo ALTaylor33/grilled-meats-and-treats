@@ -30,24 +30,45 @@ res.redirect('login')
   // }
 });
 
-router.get('/event/:id', async (req, res) => {
+router.get('/party/:id', async (req, res) => {
   try {
     const eventData = await Event.findByPk(req.params.id, {
       include: [
         {
           model: Guest,
-          attributes: ['name'],
         },
       ],
     });
 
-    const event = eventData.get({ plain: true });
+    const party = eventData.get({ plain: true });
 
-    res.render('event', {
-      ...event,
+    res.render('single-party', {
+      party,
       logged_in: req.session.logged_in
     });
   } catch (err) {
+    console.log(err)
+    res.status(500).json(err);
+  }
+});
+router.get('/party', async (req, res) => {
+  try {
+    const eventData = await Event.findAll( {
+      include: [
+        {
+          model: Guest,
+        },
+      ],
+    });
+
+    const parties = eventData.map((event) => event.get({ plain: true }));
+
+    res.render('party', {
+      parties,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    console.log(err)
     res.status(500).json(err);
   }
 });
