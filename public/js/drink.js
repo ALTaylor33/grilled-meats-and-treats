@@ -1,15 +1,15 @@
-const foodHandler = async (event) => {
+const drinkHandler = async (event) => {
     event.preventDefault();
   
-    const food = document.querySelector('#food').value.trim();
+    const drink = document.querySelector('#drink').value.trim();
     const guest = document.querySelector('#guest').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
   
-    if (food && guest ) {
-      const response = await fetch('/api/food', {
+    if (drink && guest ) {
+      const response = await fetch('/api/drink', {
         method: 'POST',
-        body: JSON.stringify({ food, guest }),
+        body: JSON.stringify({ drink, guest }),
         headers: { 'Content-Type': 'application/json' },
       });
   
