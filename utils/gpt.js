@@ -1,27 +1,35 @@
-const { Configuration, OpenAIApi } = require('openai');
+const hbs = expbs.create({
 
-require('dotenv').config({path:'../.env'})
+helpers: {
+    randomFood: function() {
 
-const config = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+      const { Configuration, OpenAIApi } = require('openai');
 
-const openai = new OpenAIApi(config);
+      require('dotenv').config({path:'../.env'})
 
-const generateFood = async () => {
+      const config = new Configuration({
+        apiKey: process.env.OPENAI_API_KEY,
+      });
 
-    const prompt = "As a chef, give a single suggestion and basic description of a food apporopriate for sharing at a casual cookout" //Change this to change AI input (longer is more expensive)
+      const openai = new OpenAIApi(config);
 
-    const response = await openai.createCompletion({
-        model: 'text-davinci-002', // language model, look up options to change (current option is cheapest text model)
-        prompt: prompt, 
-        max_tokens: 100,   // Output max length (longer is more expensive)
-        temperature: 0.5, // randomness setting (can be set between 0 and 1)
-    });
+      const generateFood = async () => {
 
-    // console.log(response.data.choices[0].text); // uncomment this (1/2) to test
-    return response.data.choices[0].text
-}
+          const prompt = "As a chef, give a single suggestion and basic description of a food apporopriate for sharing at a casual cookout" //Change this to change AI input (longer is more expensive)
+
+         const response = await openai.createCompletion({
+              model: 'text-davinci-002', // language model, look up options to change (current option is cheapest text model)
+              prompt: prompt, 
+              max_tokens: 100,   // Output max length (longer is more expensive)
+             temperature: 0.5, // randomness setting (can be set between 0 and 1)
+          });
+
+         // console.log(response.data.choices[0].text); // uncomment this (1/2) to test
+          return response.data.choices[0].text
+      }
 
 
-// generateFood(); // uncomment this (2/2) to test
+      // generateFood(); // uncomment this (2/2) to test
+    }
+  }
+})
