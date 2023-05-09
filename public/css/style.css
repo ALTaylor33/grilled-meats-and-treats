@@ -87,19 +87,16 @@
   text-decoration: underline;
 }
 
-<<<<<<< HEAD
 .gptSuggestion {
   display: flex;
   align-items: left;
   justify-content: center;
-=======
 
 .Guest-list{
   list-style-type: none;
 }
 .list-header {
   background-color: #E55934 !important;
->>>>>>> d87ba9e3b23946372e743f78cd2cbdb38717bc94
 }
 
 .single-party-h1 {
