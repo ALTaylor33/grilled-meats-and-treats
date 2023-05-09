@@ -111,7 +111,10 @@
 
 .login-background {
   background-image: url(../img/barbeque.jpg);
+  height: 100%;
   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .text-color {

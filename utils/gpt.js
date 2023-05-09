@@ -1,6 +1,6 @@
 // Handlebars.registerHelper("randomFood",function(){
-function randomFood (){
-
+async function randomFood (){
+  console.log('ChatGPT')
   const { Configuration, OpenAIApi } = require('openai');
 
   require('dotenv').config({path:'../.env'})
@@ -11,10 +11,10 @@ function randomFood (){
 
   const openai = new OpenAIApi(config);
 
-  const generateFood = async () => {
+
 
       const prompt = "As a chef, give a single suggestion and basic description of a food apporopriate for sharing at a casual cookout" //Change this to change AI input (longer is more expensive)
-
+      try {
      const response = await openai.createCompletion({
           model: 'text-davinci-002', // language model, look up options to change (current option is cheapest text model)
           prompt: prompt, 
@@ -23,8 +23,12 @@ function randomFood (){
       });
 
       console.log(response.data.choices[0].text); // uncomment this (1/2) to test
-      return response.data.choices[0].string
-  }
+      return response.data.choices[0].text
+    } catch (error) {
+      console.log(error)
+      return ''
+    }
+  
    // const food = await generateFood()
    // console.log(food)
    
