@@ -28,7 +28,8 @@
 }
 
 .login {
-  
+  display: flex;
+  flex-direction: column;
    position: absolute;
    right: 5%;
 }
