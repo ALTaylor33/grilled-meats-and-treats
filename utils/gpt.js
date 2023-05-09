@@ -2,7 +2,7 @@ Handlebars.registerHelper("randomFood",function(){
 
   const { Configuration, OpenAIApi } = require('openai');
 
-  require('dotenv').config({path:'../.env'})
+  // require('dotenv').config({path:'../.env'})
 
   const config = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
