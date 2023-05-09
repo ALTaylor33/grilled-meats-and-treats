@@ -1,5 +1,5 @@
-Handlebars.registerHelper("randomFood",function(){
-
+// Handlebars.registerHelper("randomFood",function(){
+function randomFood (){
   const { Configuration, OpenAIApi } = require('openai');
 
   // require('dotenv').config({path:'../.env'})
@@ -25,4 +25,4 @@ Handlebars.registerHelper("randomFood",function(){
       return response.data.choices[0].string
   }
    // generateFood(); // uncomment this (2/2) to test
-});
+};
