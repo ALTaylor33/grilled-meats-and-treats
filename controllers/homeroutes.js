@@ -97,13 +97,14 @@ router.get('/profile', async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
+router.get('/login', async (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/profile');
     return;
   }
- const gptText = randomFood()
+ const gptText = await randomFood()
+ console.log(gptText)
   res.render('login',{randomFood:gptText});
 });
 
