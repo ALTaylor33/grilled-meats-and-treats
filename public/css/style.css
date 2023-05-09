@@ -53,7 +53,7 @@
 }
 
 .eachParty {
-  background-color: #1b89bc;
+  background-color: slategrey;
   border: 5px double #a41c1c;
   display: block;
   text-align: center;
@@ -87,9 +87,36 @@
   text-decoration: underline;
 }
 
+<<<<<<< HEAD
 .gptSuggestion {
   display: flex;
   align-items: left;
   justify-content: center;
+=======
+
+.Guest-list{
+  list-style-type: none;
+}
+.list-header {
+  background-color: #E55934 !important;
+>>>>>>> d87ba9e3b23946372e743f78cd2cbdb38717bc94
 }
 
+.single-party-h1 {
+  font-size: 35px;
+  font-family:cursive;
+}
+
+.single-party-h2 {
+  font-size: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.login-background {
+  background-image: url(../img/barbeque.jpg);
+  background-position: center;
+}
+
+.text-color {
+  color:aliceblue;
+}
