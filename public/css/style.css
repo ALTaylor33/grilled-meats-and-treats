@@ -87,6 +87,10 @@
   text-decoration: underline;
 }
 
+.gptSuggestion {
+  display: flex;
+  align-items: left;
+  justify-content: center;
 
 .Guest-list{
   list-style-type: none;
