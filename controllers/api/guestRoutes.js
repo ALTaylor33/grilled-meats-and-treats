@@ -21,18 +21,20 @@ router.post('/', async (req, res) => {
 
 
 router.post('/party/:id', async (req, res) => {
-  const { name, item } = req.body;
+  const { name, food, drink } = req.body;
   // const { id, guestId } = req.params;
-
-  Guest.update(
+console.log (req.session)
+  Guest.upsert(
     {
       guestFood: food,
       guestDrink: drink,
+      guestName: name, 
+      event_id: req.params.id,
     },
     {
       where: {
-        id: guestId,
-        partyId: id,
+        id: req.session.guest_id,
+        event_id: req.params.id,
       },
     }
   )

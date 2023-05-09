@@ -1,8 +1,12 @@
 .body{
   background-color:#cacacc;
   background-size: cover;
+}
 
-  
+.welcomeTxt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header {
@@ -27,10 +31,45 @@
   width: 100px;
 }
 
+.newGuest{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.singleParty {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+
 .login {
-  
+  display: flex;
+  flex-direction: column;
    position: absolute;
    right: 5%;
+}
+
+.eachParty {
+  background-color: #1b89bc;
+  border: 5px double #a41c1c;
+  display: block;
+  text-align: center;
+  justify-content: center;
+}
+
+
+.partyPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnDetails {
+  font-size: 16pt;
+  border-radius: 25%;
 }
 
 .no-button {
