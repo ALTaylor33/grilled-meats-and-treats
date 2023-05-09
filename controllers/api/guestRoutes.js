@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
 
 
 router.post('/party/:id', async (req, res) => {
-  const { name, item } = req.body;
+  const { name, food, drink } = req.body;
   // const { id, guestId } = req.params;
 
   Guest.update(

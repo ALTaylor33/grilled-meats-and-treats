@@ -43,6 +43,14 @@
     let food = document.querySelector("#food").value
     let drink = document.querySelector('#drink').value
     console.log(name, food, drink)
+    const data = { id: 1, name: name, food: food, drink: drink };
+    fetch('/party', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data),
+      })
   }
   document.querySelector(".newGuest").addEventListener("submit", newGuest)
 
