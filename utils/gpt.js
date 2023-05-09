@@ -1,8 +1,9 @@
 // Handlebars.registerHelper("randomFood",function(){
 function randomFood (){
+
   const { Configuration, OpenAIApi } = require('openai');
 
-  // require('dotenv').config({path:'../.env'})
+  require('dotenv').config({path:'../.env'})
 
   const config = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
@@ -21,8 +22,12 @@ function randomFood (){
          temperature: 0.5, // randomness setting (can be set between 0 and 1)
       });
 
-      // console.log(response.data.choices[0].text); // uncomment this (1/2) to test
+      console.log(response.data.choices[0].text); // uncomment this (1/2) to test
       return response.data.choices[0].string
   }
-   // generateFood(); // uncomment this (2/2) to test
+   // const food = await generateFood()
+   // console.log(food)
+   
 };
+// randomFood(); // uncomment this (2/2) to test
+module.exports = randomFood
