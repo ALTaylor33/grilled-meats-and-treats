@@ -1,5 +1,5 @@
 .body{
-  background-color:#cacacc;
+  background-color:white;
   background-size: cover;
 }
 
@@ -22,8 +22,12 @@
     top: 35 px;
     left: 51.5%;
     z-index: 1;
-  color: orangered;
+    color: orangered;
+}
 
+#headerTxt:hover {
+  color: orange;
+  text-decoration: none;
 }
 
 #logoImg {
@@ -48,18 +52,22 @@
 .login {
   display: flex;
   flex-direction: column;
-   position: absolute;
-   right: 5%;
+  position: absolute;
+  right: 5%;
 }
 
 .eachParty {
-  background-color: #1b89bc;
+  background-color: lightgray;
   border: 5px double #a41c1c;
   display: block;
   text-align: center;
   justify-content: center;
 }
 
+.eachParty:hover {
+  background-color: #FFDBA4;
+  border: 5px solid #a41c1c;
+}
 
 .partyPage {
   display: flex;
@@ -69,7 +77,7 @@
 
 .btnDetails {
   font-size: 16pt;
-  border-radius: 25%;
+  border-radius: 15px;
 }
 
 .no-button {
