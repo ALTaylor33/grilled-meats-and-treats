@@ -1,19 +1,32 @@
 <div class="row mb-4 project">
-  <div class=" singleParty col-md-5">
-    <h1>{{party.event_name}} - {{party.event_date}}</h1>
+  <div class="col-md-5">
+    <h1 class="single-party-h1">{{party.event_name}}</h1>
+    <h2 class="single-party-h2">Date: {{party.event_date}} </h2>
     <p>{{party.address}}</p>
     <form class="newGuest">
-      <label>Name</label>
-      <input placeholder="Your Name" id="name"></input>
-      <label>Food</label>
-      <input placeholder="ex. Hamburgers,Hotdogs..." id="food"></input>
-      <label>Drink</label>
-      <input placeholder="ex. Whiskey,Beer..." id="drink"></input>
-      <button>Confirm Guest!</button>
+      <label class="form-label">Name</label> 
+      <input class="form-input" placeholder="Your Name" id="name"></input>
+      <label class="form-label">Food</label>
+      <input class="form-input" placeholder="ex. Hamburgers,Hotdogs..." id="food"></input>
+      <label class="form-label">Drink</label>
+      <input class="form-input" placeholder="ex. Whiskey,Beer..." id="drink"></input>
+      <button class="btn">Confirm Guest!</button>
     </form>
-    <ul>
+    </div>
+    <div class="col-md-7 pl-4">
+
+    <ul class="Guest-list">
       {{#each party.guests}}
-      <li>{{this.guestName}} {{this.guestDrink}} {{this.guestFood}} {{log this}}
+      <li>
+        <div class="card card-rounded">
+          <div class="card-body">
+            <h4 class="card-header list-header">Guest: {{this.guestName}} </h4>
+            <p>Food: {{this.guestFood}} </p>
+            <p>Drink: {{this.guestDrink}} </p>
+            {{log this}}
+          </div>
+        </div>
+        {{!-- {{this.guestName}} {{this.guestDrink}} {{this.guestFood}} {{log this}} --}}
         {{!-- <form id="guestFoodForm{{@index}}">
           <div id="guestFood" class="form-group">
             <label for="guestFood">Guest Food:</label>
