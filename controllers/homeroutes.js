@@ -64,7 +64,7 @@ router.get('/party', async (req, res) => {
     });
 
     const parties = eventData.map((event) => event.get({ plain: true }));
-    // console.log(parties)
+    console.log(parties)
 
     res.render('party', {
       parties,
