@@ -16,6 +16,10 @@
   display:flex;
   justify-content: center;
 }
+
+.header:hover {
+  border: 5px solid #a41c1c;
+}
  
 #headerTxt{
     position: absolute;
