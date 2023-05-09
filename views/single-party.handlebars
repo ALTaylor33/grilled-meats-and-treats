@@ -12,9 +12,9 @@
       <button>Confirm Guest!</button>
     </form>
     <ul>
-      {{#each guests}}
-      <li>{{this.name}}
-        <form id="guestFoodForm{{@index}}">
+      {{#each party.guests}}
+      <li>{{this.guestName}} {{this.guestDrink}} {{this.guestFood}} {{log this}}
+        {{!-- <form id="guestFoodForm{{@index}}">
           <div id="guestFood" class="form-group">
             <label for="guestFood">Guest Food:</label>
             <textarea class="form-input" id="guestFoodDesc{{@index}}" name="guestFoodDesc"></textarea>
@@ -28,7 +28,7 @@
             <textarea class="form-input" id="guestDrinkDesc{{@index}}" name="guestDrinkDesc"></textarea>
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </form> --}}
 
       </li>
       {{/each}}
@@ -43,17 +43,19 @@
     let food = document.querySelector("#food").value
     let drink = document.querySelector('#drink').value
     console.log(name, food, drink)
-    const data = { id: 1, name: name, food: food, drink: drink };
-    fetch('/party', {
+    const data = { name: name, food: food, drink: drink };
+    fetch('/api/guest/party/{{party.id}}', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(data),
+      }) .then(()=>{
+        window.location.href = '/party/{{party.id}}'
       })
+
   }
   document.querySelector(".newGuest").addEventListener("submit", newGuest)
 
-  const postGuest = await fetch('/api/guest/party/')
 
 </script>
