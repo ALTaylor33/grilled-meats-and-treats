@@ -19,6 +19,7 @@
 
 .header:hover {
   border: 5px solid #a41c1c;
+  background-color: black;
 }
  
 #headerTxt{
@@ -61,15 +62,19 @@
 }
 
 .eachParty {
-  background-color: lightgray;
+  background-color: rgb(72, 71, 71);
+  color: orangered;
   border: 5px double #a41c1c;
   display: block;
   text-align: center;
   justify-content: center;
+  font-size: large;
+  padding: 10px;
+  margin: 10px;
 }
 
 .eachParty:hover {
-  background-color: #FFDBA4;
+  background-color: black;
   border: 5px solid #a41c1c;
 }
 
