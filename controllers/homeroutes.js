@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Event, Guest } = require('../models');
 const withAuth = require('../utils/auth');
+const randomFood = require('../utils/gpt')
 
 router.get('/', async (req, res) => {
   console.log('inside homeroutes')
@@ -102,8 +103,8 @@ router.get('/login', (req, res) => {
     res.redirect('/profile');
     return;
   }
-
-  res.render('login');
+ const gptText = randomFood()
+  res.render('login',{randomFood:gptText});
 });
 
 module.exports = router;
