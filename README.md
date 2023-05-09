@@ -28,4 +28,9 @@ Collaborators on this project include:
 
 
 ## Features
- 
+Sizzle has a user signup/signin system that makes it easy for users to access their parties and see what has been added. 
+
+Sizzle can save party info and allow users modify thier parties as plans change.
+
+Sizzle includes an AI Chef to give suggestions for food contributions\
+
