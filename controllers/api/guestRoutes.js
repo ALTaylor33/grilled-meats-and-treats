@@ -20,14 +20,14 @@ router.post('/', async (req, res) => {
 });
 
 
-router.post('/party/:id/guests/:guestId', async (req, res) => {
-  const { guestFoodDesc, guestDrinkDesc } = req.body;
-  const { id, guestId } = req.params;
+router.post('/party/:id', async (req, res) => {
+  const { name, item } = req.body;
+  // const { id, guestId } = req.params;
 
   Guest.update(
     {
-      food: guestFoodDesc,
-      drink: guestDrinkDesc,
+      guestFood: food,
+      guestDrink: drink,
     },
     {
       where: {
