@@ -87,5 +87,9 @@
   text-decoration: underline;
 }
 
-
+.gptSuggestion {
+  display: flex;
+  align-items: left;
+  justify-content: center;
+}
 
