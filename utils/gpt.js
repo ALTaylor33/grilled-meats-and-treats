@@ -1,4 +1,3 @@
-// Handlebars.registerHelper("randomFood",function(){
 async function randomFood (){
   console.log('ChatGPT')
   const { Configuration, OpenAIApi } = require('openai');
@@ -10,8 +9,6 @@ async function randomFood (){
   });
 
   const openai = new OpenAIApi(config);
-
-
 
       const prompt = "As a chef, give a single suggestion and basic description of a food apporopriate for sharing at a casual cookout" //Change this to change AI input (longer is more expensive)
       try {
@@ -28,10 +25,7 @@ async function randomFood (){
       console.log(error)
       return ''
     }
-  
-   // const food = await generateFood()
-   // console.log(food)
-   
+     
 };
-// randomFood(); // uncomment this (2/2) to test
+
 module.exports = randomFood

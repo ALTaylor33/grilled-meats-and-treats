@@ -22,13 +22,7 @@ Event.init(
             type: DataTypes.DATE,
             allowNull: false,
         },
-        // host_id: {
-        //     type: DataTypes.INTEGER,
-        //     references: {
-        //         model: "user",
-        //         key: "id"
-        //     }
-        // }
+
     },
     {
         sequelize,

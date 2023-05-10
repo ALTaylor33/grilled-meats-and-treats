@@ -5,30 +5,9 @@ const randomFood = require('../utils/gpt')
 
 router.get('/', async (req, res) => {
   console.log('inside homeroutes')
-  // try {
-
-  //   // // Get all projects and JOIN with user data
-  //   // const eventData = await Event.findAll({
-  //   //   include: [
-  //   //     {
-  //   //       model: Guest,
-  //   //       attributes: ['name'],
-  //   //     },
-  //   //   ],
-  //   // });
    
 res.redirect('login')
-  //   // Serialize data so the template can read it
-  //   const events = eventData.map((event) => event.get({ plain: true }));
 
-  //   // Pass serialized data and session flag into template
-  //   res.render('homepage', { 
-  //     events, 
-  //     logged_in: req.session.logged_in 
-  //   });
-  // } catch (err) {
-  //   res.status(500).json(err);
-  // }
 });
 
 router.get('/party/:id', async (req, res) => {
