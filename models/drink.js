@@ -11,22 +11,12 @@ Drink.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        // drink_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        //     references: {
-        //         model: "user",
-        //         key: "id",
-        //     }
-        // },
+
        event_id:
         {
             type: DataTypes.INTEGER,
             allowNull: true,
-            // references: {
-            //     model: "event",
-            //     key: "id",
-            // }
+
         },
         drink_name: {
             type: DataTypes.STRING,

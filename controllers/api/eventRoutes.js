@@ -6,7 +6,6 @@ router.post('/', async (req, res) => {
   try {
     const newEvent = await Event.create({
       ...req.body,
-      // guest_id: req.session.guest_id,
     });
 
     res.status(200).json(newEvent);

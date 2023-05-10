@@ -10,7 +10,7 @@ Sizzle lets you know how many people are coming, what you're missing before the 
 
 ## Installation
 
-To install/use Sizzle users can simply access the application via the live link in our repository: 
+To install/use Sizzle users can simply access the application via the live link in our repository: https://meats.herokuapp.com/login
 
 ## Usage
 
@@ -21,7 +21,7 @@ Usage is intended to make party planning easier and less involved for hosts and 
 Collaborators on this project include:
 
 [Eric Jacob, ](https://github.com/EricJacob99)
-[Austin Lewis, ](https://github.com/ALTaylor33) 
+[Austin Taylor, ](https://github.com/ALTaylor33) 
 [John Killeen, ](https://github.com/killeen31)
 [Jason Bernzweig, ](http://github.com/jbernzweig)
 [Christopher Gould, ](https://github.com/cleegould)
@@ -32,5 +32,5 @@ Sizzle has a user signup/signin system that makes it easy for users to access th
 
 Sizzle can save party info and allow users modify thier parties as plans change.
 
-Sizzle includes an AI Chef to give suggestions for food contributions\
+Sizzle includes an AI Chef to give suggestions for food contributions
 

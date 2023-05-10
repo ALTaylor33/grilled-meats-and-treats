@@ -7,7 +7,6 @@ const seedEvent = require("./event-seeds")
 
 
 const userData = require('./user-data.json');
-// const projectData = require('./projectData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -22,14 +21,6 @@ const seedDatabase = async () => {
   const drink = await seedDrinks()
 
   console.log (events, guests, food, drink)
-
-
-  // for (const project of projectData) {
-  //   await Project.create({
-  //     ...project,
-  //     user_id: users[Math.floor(Math.random() * users.length)].id,
-  //   });
-  // }
 
   process.exit(0);
 };
